@@ -1,4 +1,6 @@
-# March 25th 2019
+# Rust Macros
+
+## Macro rules
 
 [The Little Book of Rust Macros](https://danielkeep.github.io/tlborm/book/index.html) (tlborm) is way out-dated, but I'd say this is the most comprehensive book about Rust macros/syntax-extensions. The down side is it doesn't cover _procedural macros_, which has not existed at the time of writing. The reason why official Rust references only covers procedural macros is because this book does such a good job there is no reason to do it in the official docs.
 
@@ -45,3 +47,31 @@ Key points:
         }
     };
     ```
+
+## Procedural Macros
+
+### Key points
+
+- Instead of working on AST token directly from `macro_rule!`, proc macro begins with TokenStream, which is a list of TokenTree.
+- Able to use template code directly and parse them into TokenStream.
+- Three kinds of proc macro:
+
+  - function-like macros(proc_macro, (TokenStream) -> TokenStream))
+  - derive mode macros(proc_macro_derive, (TokenStream) -> TokenStream))
+  - attribute macros(proc_macro_attribute, (TokenStream, TokenStream) -> TokenStream))
+
+- Need a tweek in `Cargo.toml`
+
+```toml
+[lib]
+proc-macro = true
+```
+
+- Maybe it can check syntax from other languages in IDE with RLS. For example, `let sql = sql!(SELECT * FROM posts WHERE id=1);`. It would be great it can check sql syntax in IDE, right? But it might be too much work for RLS. I had RLS crushed a few times today because of proc macro
+[proc macros in rust reference](https://doc.rust-lang.org/reference/procedural-macros.html)
+[proc macros in rust blog](https://blog.rust-lang.org/2018/12/21/Procedural-Macros-in-Rust-2018.html)
+[proc-macro crate](https://doc.rust-lang.org/proc_macro/index.html)
+It is quite different with what I thought proc macros were two days ago. It really looks like something fun to play with.
+
+Another thing about Rust, mostly about cargo:
+[creating cargo workspace](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html#cargo-workspaces)

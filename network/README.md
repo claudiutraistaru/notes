@@ -1,8 +1,8 @@
-# March 23rd 2019
+# Computer Network In General
 
-Since it is my first one, I will covered what I learned in the past few weeks.
+## Background
 
-A few weeks ago, I got interested in p2p. So I attempted to build a p2p bootstrap POC with Rust. Because I always believe that's the best way to expose what I am lacking in understanding p2p as a whole.
+(A few weeks ago(as of 2019 March 23rd), I got interested in p2p. So I attempted to build a p2p bootstrap POC with Rust. Because I always believe that's the best way to expose what I am lacking in understanding p2p as a whole.
 
 The POC works well at the beginning. I created a basic protocol over UDP to bootstrap a p2p network. The first thing I learned is no matter how decentralized the network is, the bootstrap process will require a centralized server of some sort. unless it's a private network where broadcasting message is possible. I let the central server send the address of last 10 nodes that signaled it's start to a requesting node as seeds to find its peers.
 

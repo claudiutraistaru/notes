@@ -1,7 +1,4 @@
-# March 28th 2019
-
-Today I went back to libp2p and try to figure out how a basic host is created.
-This actually leads to something I have learned previously.
+# Multiformats notes & analysis
 
 First, [multiformats](https://multiformats.io/) is designed to make project/frameworks future proof. Because technologies change so quick nowadays. The technology we rely on today may not fit our need tomorrow. Or simply just for flexibility. To illustrate, here is an example:
     I'm designing an API which accepts and emits JSON data. With the history of XML pushed out of fashion by JSON, I need to prepare for the next data-serialization scheme. With multicodec, all my data will be prefixed with the type of scheme codec it's being used, in my case it would be JSON. So my handling of data is not JSON but multicodec, I accept multicodec data and from the prefix, I can easily find out it's JSON data and handle it accordingly. In the future, I might want to switch to protobuf, which is no problem because all I need to do is to add a handler for protobuf.

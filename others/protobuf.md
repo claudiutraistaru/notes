@@ -1,6 +1,5 @@
-# April 3rd 2019
 
-## [Protobuf](https://developers.google.com/protocol-buffers/)
+# [Protobuf](https://developers.google.com/protocol-buffers/)
 
 - Message encoding more concise and quick than XML.
 - The client need to use protobuf code generation tool to utilize this library.

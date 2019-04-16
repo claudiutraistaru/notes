@@ -1,4 +1,6 @@
-# March 24th 2019
+# libp2p notes & analysis
+
+## libp2p-go default host construct
 
 libp2p's main entry function `func New(ctx context.Context, opts ...Option) (host.Host, error)` is quite unique. Similarly, it uses a [Config struct](https://github.com/libp2p/go-libp2p/blob/9a5a43777294ea1f4337ae90604c26c2aad8765a/config/config.go#L44) to build the _Host_, just like most of services. Differently, libp2p use chain of callback functions called [_Option_](https://github.com/libp2p/go-libp2p/blob/9a5a43777294ea1f4337ae90604c26c2aad8765a/config/config.go#L226) to be _applied_ on an empty Config. In another word, user can't just provide a Config instance(the _New_ construct simply doesn't take Config). Instead, user need to provide a slice of _Option_ s that will be applied on to an initially empty Config during construction. I think the rationale behind it is that a framework like libp2p requires a lot of customization and flexibity and a simple Config instance just wouldn't do. Might as well just chain callbacks.
 

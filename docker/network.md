@@ -1,7 +1,4 @@
-# March 29th 2019
-
-Interested in playing with AWS Fargate.
-Planning to try out libp2p on docker or vagrant.
+# Docker network notes
 
 Let's first explore docker network.
 
@@ -16,8 +13,4 @@ I `cat`ed the `/etc/hosts` and `/etc/hostname` and found out their were each ass
 
 I was stuck. So I sought for help from Google. And I did find [something](https://docs.docker.com/v17.09/engine/userguide/networking/default_network/configure-dns/). It was a simple `mount` command. (I'll explain this command in the next section) Then I successfully `ping`ed them from each other's shell. And their host/ip combo showed up in `etc/hosts` as well.
 
-## Busybox
-
-To understand `mount`, I did some research. It is part of [Busybox](https://busybox.net/), the swiss army knife of embedded linux. This single piece of software contains all the basic GNU software. Since everything is in the same code base, it's size is tiny. `mount` is one of them along with `mountpoint`. You can mount onto a file system with a mount point. So with `mountpoint [dirname]` you can find out if a directory is a mountpoint inside alpine. Real convenient.
-The usage about these commands can be found [here](https://busybox.net/downloads/BusyBox.html).
-
+More about [mount and busybox](system/busybox.md)
