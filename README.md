@@ -7,4 +7,5 @@
 - [p2p](p2p)
 - [rust](rust)
 - [vagrant](vagrant)
+- [aws](aws)
 - [other](other)
