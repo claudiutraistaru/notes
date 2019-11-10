@@ -20,9 +20,9 @@ Logical/Virtual address(known to process) -> Linear address(Mapped to a segment)
 
 - Intel 80286. 1982. There are "real mode" and "protected mode".
 
-    Segment Selector becomes more than a base address. Segment Selector consists of 13-bit index(to GDP/LDT), 2-bit RPL(Requested Priviledge Level), and 1-bit Table Indicator(TI, GDT -> 0, LDT -> 1)
+    Segment Selector becomes more than a base address. Segment Selector consists of 13-bit index(to GDT/LDT), 2-bit RPL(Requested Priviledge Level), and 1-bit Table Indicator(TI, GDT -> 0, LDT -> 1)
 
-    13-bit index refers to an entry in GDP/LDT. Each entry in GDP is a 64-bit Segment Descriptor.
+    13-bit index refers to an entry in GDT/LDT. Each entry in GDT is a 64-bit Segment Descriptor.
 
     Segment Descriptor in 80286 consists of 24-bit base address, 16-bit segment limit, 8-bit flags and 16-bit reserved.
 
