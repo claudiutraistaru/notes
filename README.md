@@ -1,4 +1,4 @@
-# Today I Learned
+# Notes & Quick References
 
 ## Content
 
