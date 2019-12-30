@@ -10,3 +10,7 @@
 - [arch](arch)
 - [aws](aws)
 - [other](other)
+
+## My Debug Journal
+Learn from the mistakes
+[My Debug Journal](DEBUG-JOURNAL.md)
